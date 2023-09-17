@@ -1,5 +1,6 @@
 @ECHO ON
 
+set WGPU_NATIVE_VERSION=v%PKG_VERSION%
 copy %PREFIX%\\Library\\include\\webgpu.h ffi\\webgpu-headers\\webgpu.h
 
 cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
