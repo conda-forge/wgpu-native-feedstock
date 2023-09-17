@@ -1,5 +1,5 @@
 {% set name = "wgpu-native" %}
-{% set version = "0.17.0.2" %}
+{% set version = "0.14.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,9 +7,7 @@ package:
 
 source:
   url: https://github.com/gfx-rs/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d84de1dd26295cc0a6fdfc150e3018bda755b7620a1e8950edc96ecb5c2e4eef
-  patches:
-    - use_prefix.patch
+  sha256: 6ff2a08cd789a2edb65a000b91e717d3fdd95f8d59ab5a3d6c95e41a3f76d5cd
 
 build:
   number: 0
@@ -27,7 +25,7 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers
+    - webgpu-headers 0.0.0.2022.10*
     - clangdev
 
 test:
