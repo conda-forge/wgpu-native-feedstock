@@ -1,8 +1,9 @@
 set -ex
+export WGPU_NATIVE_VERSION=v${PKG_VERSION}
 export CARGO_PKG_VERSION=${PKG_VERSION}
 cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
 
-cp ${PREFIX}/include/webgpu.h ffi/webgpu.h
+cp ${PREFIX}/include/webgpu.h ffi/webgpu-headers/webgpu.h
 
 cargo build --release --all-features
 

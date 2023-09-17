@@ -8,11 +8,9 @@ package:
 source:
   url: https://github.com/gfx-rs/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: d84de1dd26295cc0a6fdfc150e3018bda755b7620a1e8950edc96ecb5c2e4eef
-  patches:
-    - use_prefix.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # hmaarrfk: 2023/07/29 -- No clue ....
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x') }}
@@ -27,7 +25,7 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers
+    - webgpu-headers 0.0.0.2023.06
     - clangdev
 
 test:
