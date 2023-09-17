@@ -8,8 +8,6 @@ package:
 source:
   url: https://github.com/gfx-rs/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 6ff2a08cd789a2edb65a000b91e717d3fdd95f8d59ab5a3d6c95e41a3f76d5cd
-  # patches:
-  #   - use_prefix.patch
 
 build:
   number: 0
