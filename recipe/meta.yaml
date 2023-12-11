@@ -1,5 +1,5 @@
 {% set name = "wgpu-native" %}
-{% set version = "0.18.1.3" %}
+{% set version = "0.18.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/gfx-rs/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 02b6f654ea8beaa91f0562328a1bcb399e9527eccf57a4cd420d46fb306f6f8c
+  sha256: 009fd208f242141062dff2658646a6c471162619a02007403505a1d556e428da
 
 build:
   number: 0
