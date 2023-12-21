@@ -25,7 +25,7 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2023.11.27
+    - webgpu-headers 0.0.0.2023.10.24
     - clangdev
 
 test:
