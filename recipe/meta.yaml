@@ -10,7 +10,7 @@ source:
   sha256: 009fd208f242141062dff2658646a6c471162619a02007403505a1d556e428da
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # hmaarrfk: 2023/07/29 -- No clue ....
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x') }}
