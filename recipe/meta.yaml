@@ -1,16 +1,15 @@
-{% set name = "wgpu-native" %}
 {% set version = "0.18.1.4" %}
 
 package:
-  name: {{ name|lower }}
+  name: wgpu-native
   version: {{ version }}
 
 source:
-  url: https://github.com/gfx-rs/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 009fd208f242141062dff2658646a6c471162619a02007403505a1d556e428da
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # hmaarrfk: 2023/07/29 -- No clue ....
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x') }}
@@ -25,7 +24,7 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2023.11.27
+    - webgpu-headers 0.0.0.2023.10.24
     - clangdev
 
 test:
