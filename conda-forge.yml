@@ -15,6 +15,3 @@ build_platform:
 provider:
   linux_aarch64: azure
   linux_ppc64le: azure
-bot:
-  abi_migration_branches:
-    - 0.14
