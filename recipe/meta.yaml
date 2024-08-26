@@ -17,14 +17,14 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2023.11.27
+    - webgpu-headers 0.0.0.2024.6.12
     - clangdev
 
 test:
