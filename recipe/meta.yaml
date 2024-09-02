@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5c6dcba76ec6419fa56dfad4c7116aed4bb05308c91dddbee44c31c8d2a40c3d
+  sha256: 203825389f87987e0896e559fcf2e3eac0244ebf3907a43824b9ac9ab13deb3f
 
 build:
   number: 0
