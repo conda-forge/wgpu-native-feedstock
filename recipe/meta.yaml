@@ -1,4 +1,4 @@
-{% set version = "0.19.4.1" %}
+{% set version = "22.1.0.2" %}
 
 package:
   name: wgpu-native
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: b8b6bddfe61a0041945cb0ae45e658d43a583972a774dbee02d77f50aa5a6f1d
+  sha256: 203825389f87987e0896e559fcf2e3eac0244ebf3907a43824b9ac9ab13deb3f
 
 build:
   number: 0
@@ -17,10 +17,10 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
-    - sysroot_linux-64 2.17  # [linux64]
     - pkg-config
     - clangdev
   host:
