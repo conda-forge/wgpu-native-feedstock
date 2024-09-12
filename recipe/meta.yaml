@@ -1,4 +1,4 @@
-{% set version = "22.1.0.4" %}
+{% set version = "22.1.0.5" %}
 
 package:
   name: wgpu-native
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 7de2b724d702a0ac36c246b6723f8193e7f991ef5a3fe006b7c0013305216500
+  sha256: cdabfa0eb8e9e3187834267eb9401c15a99d0e7d0b1813e0f72bd3d156be5ca8
 
 build:
   number: 0
