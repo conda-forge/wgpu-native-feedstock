@@ -26,6 +26,8 @@ requirements:
   host:
     - webgpu-headers 0.0.0.2024.6.12
     - clangdev
+  run_constrained:
+    - webgpu-headers 0.0.0.2024.6.12
 
 test:
   commands:
