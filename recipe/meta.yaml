@@ -11,9 +11,8 @@ source:
 build:
   number: 0
   run_exports:
-    # hmaarrfk: 2025/02/20 -- Too experimental for
-    # looser pinnings
-    - {{ pin_subpackage('wgpu-native', max_pin='x.x.x') }}
+    # hmaarrfk: 2025/02/20 -- Too experimental for looser pinnings
+    - {{ pin_subpackage('wgpu-native', max_pin='x.x.x.x') }}
 
 requirements:
   build:
