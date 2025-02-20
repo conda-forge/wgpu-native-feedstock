@@ -11,7 +11,8 @@ source:
 build:
   number: 0
   run_exports:
-    # hmaarrfk: 2023/07/29 -- No clue ....
+    # hmaarrfk: 2025/02/20 -- Too experimental for
+    # looser pinnings
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x') }}
 
 requirements:
@@ -24,10 +25,10 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2024.6.12
+    - webgpu-headers 0.0.0.2024.11.12
     - clangdev
   run_constrained:
-    - webgpu-headers 0.0.0.2024.6.12
+    - webgpu-headers 0.0.0.2024.11.12
 
 test:
   commands:
