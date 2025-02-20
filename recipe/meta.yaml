@@ -1,4 +1,4 @@
-{% set version = "22.1.0.5" %}
+{% set version = "24.0.0.1" %}
 
 package:
   name: wgpu-native
@@ -6,13 +6,13 @@ package:
 
 source:
   url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: cdabfa0eb8e9e3187834267eb9401c15a99d0e7d0b1813e0f72bd3d156be5ca8
+  sha256: 834bb9848d25d5c40dc94859e4287ff78e63a8b9a29640f55fd33abe16b53982
 
 build:
-  number: 1
+  number: 0
   run_exports:
-    # hmaarrfk: 2023/07/29 -- No clue ....
-    - {{ pin_subpackage('wgpu-native', max_pin='x.x.x') }}
+    # hmaarrfk: 2025/02/20 -- Too experimental for looser pinnings
+    - {{ pin_subpackage('wgpu-native', max_pin='x.x.x.x') }}
 
 requirements:
   build:
@@ -24,10 +24,10 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2024.6.12
+    - webgpu-headers 0.0.0.2024.11.12
     - clangdev
   run_constrained:
-    - webgpu-headers 0.0.0.2024.6.12
+    - webgpu-headers 0.0.0.2024.11.12
 
 test:
   commands:
