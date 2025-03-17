@@ -9,7 +9,7 @@ source:
   sha256: 0b3bc5876a04fd579379ac77e938e2b691f1d0c149e80905c6e96aded6e3239f
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # hmaarrfk: 2025/02/20 -- Too experimental for looser pinnings
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x.x') }}
@@ -24,10 +24,10 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2024.11.12
+    - webgpu-headers 0.0.0.2024.11.12.*
     - clangdev
   run_constrained:
-    - webgpu-headers 0.0.0.2024.11.12
+    - {{ pin_compatible('webgpu-headers', max_pin='x.x.x.x.x.x') }}
 
 test:
   commands:
