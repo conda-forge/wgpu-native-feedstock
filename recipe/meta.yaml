@@ -27,7 +27,7 @@ requirements:
     - webgpu-headers 0.0.0.2024.11.12.*
     - clangdev
   run_constrained:
-    - webgpu-headers 0.0.0.2024.11.12.*
+    - {{ pin_compatible('webgpu-headers', max_pin='x.x.x.x.x.x') }}
 
 test:
   commands:
