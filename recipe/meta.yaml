@@ -1,4 +1,4 @@
-{% set version = "24.0.0.2" %}
+{% set version = "24.0.3.1" %}
 
 package:
   name: wgpu-native
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 0b3bc5876a04fd579379ac77e938e2b691f1d0c149e80905c6e96aded6e3239f
+  sha256: aab46449dc248515a77f185c1b8bf1d55d525decae6572834d34187e8281aa61
 
 build:
-  number: 1
+  number: 0
   run_exports:
     # hmaarrfk: 2025/02/20 -- Too experimental for looser pinnings
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x.x') }}
