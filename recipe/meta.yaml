@@ -24,7 +24,7 @@ requirements:
     - pkg-config
     - clangdev
   host:
-    - webgpu-headers 0.0.0.2024.11.12.*
+    - webgpu-headers 0.0.0.2026.3.19.*
     - clangdev
   run_constrained:
     - {{ pin_compatible('webgpu-headers', max_pin='x.x.x.x.x.x') }}
