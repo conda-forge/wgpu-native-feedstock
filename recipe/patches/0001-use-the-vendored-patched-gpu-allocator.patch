@@ -1,0 +1,12 @@
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -133,3 +133,9 @@
+ 
+ [build-dependencies]
+ bindgen = "0.72"
++
++# Build against the copy of gpu-allocator vendored by this recipe, which
++# carries a fix for readback allocations landing on uncached memory. See
++# recipe/patches/0001-gpu-allocator-prefer-cached-for-readback.patch.
++[patch.crates-io]
++gpu-allocator = { path = "gpu-allocator" }

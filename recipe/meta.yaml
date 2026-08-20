@@ -1,15 +1,32 @@
 {% set version = "29.0.1.1" %}
+{% set gpu_allocator_version = "0.28.0" %}
 
 package:
   name: wgpu-native
   version: {{ version }}
 
 source:
-  url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 6008651e1d10022d4ded15b69405b4ba88577be5d623938ba98ad241b2cbf818
+  - url: https://github.com/gfx-rs/wgpu-native/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: 6008651e1d10022d4ded15b69405b4ba88577be5d623938ba98ad241b2cbf818
+    patches:
+      # Build against the vendored gpu-allocator below rather than crates.io.
+      - patches/0001-use-the-vendored-patched-gpu-allocator.patch
+  # wgpu's vulkan backend has used gpu-allocator since wgpu v28, and its
+  # GpuToCpu path requires HOST_COHERENT, which on Intel's ANV forces every
+  # readback onto uncached memory -- 0.29 GB/s against 25 GB/s for the cached
+  # type on an Arrow Lake iGPU. Vendored here so the fix can be carried until
+  # it lands upstream.
+  - url: https://static.crates.io/crates/gpu-allocator/gpu-allocator-{{ gpu_allocator_version }}.crate
+    # A .crate file is a gzipped tarball, but conda-build dispatches on the
+    # file extension and does not recognise .crate, so name it .tar.gz here.
+    fn: gpu-allocator-{{ gpu_allocator_version }}.tar.gz
+    sha256: 51255ea7cfaadb6c5f1528d43e92a82acb2b96c43365989a28b2d44ee38f8795
+    folder: gpu-allocator
+    patches:
+      - patches/0001-gpu-allocator-prefer-cached-for-readback.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # hmaarrfk: 2025/02/20 -- Too experimental for looser pinnings
     - {{ pin_subpackage('wgpu-native', max_pin='x.x.x.x') }}
